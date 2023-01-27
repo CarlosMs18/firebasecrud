@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-image: url(./assets/waterfall-gd628726ff_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover ;
+  background-position: top;
+  height: 100vh;
+
+}

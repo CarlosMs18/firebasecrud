@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row justify-content-center mt-3">
+     <div class="col-8">
+      <h1 class="text-white text-center text-uppercase fw-bold">{{titulo}}</h1>
+      <form
+      [formGroup]="empleadosForm"
+      (ngSubmit)="enviarDatos()"
+      >
+         <div class="row mt-3">
+              <div class="col-6">
+                <input
+                formControlName="nombre"
+                type="text"
+                class="form-control p-2"
+                placeholder="Nombre..."
+                >
+                <span *ngIf="campoValido('nombre')" class="text-danger">El campo es <strong>es requerido</strong></span>
+              </div>
+              <div class="col-6">
+                <input
+                formControlName="apellido"
+                type="text"
+                class="form-control p-2"
+                 placeholder="Apellido..."
+                >
+                <span *ngIf="campoValido('apellido')" class="text-danger">El campo es <strong>es requerido</strong></span>
+              </div>
+         </div>
+         <div class="row mt-3">
+          <div class="col-6">
+            <input
+            formControlName="documento"
+            type="text"
+            class="form-control p-2"
+            placeholder="Documento..."
+            >
+            <span *ngIf="campoValido('documento')" class="text-danger">El campo es <strong>es requerido</strong></span>
+          </div>
+          <div class="col-6">
+            <input
+            formControlName="salario"
+            type="number"
+            min="0"
+            value="0"
+            class="form-control p-2"
+            placeholder="Salario..."
+            >
+            <span *ngIf="campoValido('salario')" class="text-danger">El campo es <strong>es requerido</strong></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="mt-5 d-flex flex-column ">
+              <button class="btn btn-success mb-2 fs-4" [disabled]="empleadosForm.invalid" >
+                {{boton}} </button>
+              <button class="btn btn-secondary fs-4">Volver</button>
+
+            </div>
+          </div>
+        </div>
+      </form>
+     </div>
+  </div>
+</div>
